@@ -3,15 +3,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Code2, ArrowRight, Upload, Plus, X, ArrowLeft, Check } from 'lucide-react';
 
+// NOTE: `id` here is what actually gets submitted to the backend and must
+// match the canonical skill strings in backend/constants/techStack.constants.js
+// (TECH_STACK) so the matching engine's skill-overlap scoring works against
+// real signups, not just seeded data. `name`/`symbol`/`color` below are
+// purely cosmetic and unchanged - the chips render exactly as before.
 const TECH_OPTIONS = [
-  { id: 'js', name: 'JavaScript', symbol: 'JS', color: '#F7DF1E' },
-  { id: 'ts', name: 'TypeScript', symbol: 'TS', color: '#3178C6' },
-  { id: 'py', name: 'Python', symbol: 'PY', color: '#3776AB' },
-  { id: 'rs', name: 'Rust', symbol: 'RS', color: '#000000', bg: '#FFFFFF' },
+  { id: 'javascript', name: 'JavaScript', symbol: 'JS', color: '#F7DF1E' },
+  { id: 'typescript', name: 'TypeScript', symbol: 'TS', color: '#3178C6' },
+  { id: 'python', name: 'Python', symbol: 'PY', color: '#3776AB' },
+  { id: 'rust', name: 'Rust', symbol: 'RS', color: '#000000', bg: '#FFFFFF' },
   { id: 'go', name: 'Go', symbol: 'GO', color: '#00ADD8' },
   { id: 'react', name: 'React', symbol: 'RE', color: '#61DAFB' },
-  { id: 'node', name: 'Node.js', symbol: 'NO', color: '#339933' },
-  { id: 'next', name: 'Next.js', symbol: 'NX', color: '#000000', bg: '#FFFFFF' },
+  { id: 'node.js', name: 'Node.js', symbol: 'NO', color: '#339933' },
+  { id: 'next.js', name: 'Next.js', symbol: 'NX', color: '#000000', bg: '#FFFFFF' },
   { id: 'docker', name: 'Docker', symbol: 'DK', color: '#2496ED' },
   { id: 'aws', name: 'AWS', symbol: 'AW', color: '#FF9900' },
   { id: 'solidity', name: 'Solidity', symbol: 'SO', color: '#363636', bg: '#FFFFFF' },
@@ -232,13 +237,20 @@ const Signup = () => {
                   <div className="space-y-4">
                     <div className="space-y-1">
                       <label className="text-xs font-mono text-gray-500 uppercase tracking-widest">Team Role</label>
+                      {/*
+                        NOTE: option `value`s now match the canonical role
+                        strings used by ROLES / ROLE_CATEGORY in the backend
+                        (backend/constants/techStack.constants.js and
+                        backend/services/matching.service.js). Labels shown
+                        to the user are unchanged.
+                      */}
                       <select value={formData.team_role} onChange={e => updateForm('team_role', e.target.value)} className="w-full bg-black border border-white/10 px-4 py-3 text-white focus:border-primary outline-none transition-colors brutal-border appearance-none cursor-pointer">
                         <option value="" disabled>Select Role...</option>
-                        <option value="frontend">Frontend</option>
-                        <option value="backend">Backend</option>
-                        <option value="fullstack">Fullstack</option>
-                        <option value="ai">AI / ML</option>
-                        <option value="design">UI/UX Design</option>
+                        <option value="Frontend Developer">Frontend</option>
+                        <option value="Backend Developer">Backend</option>
+                        <option value="Full Stack Developer">Fullstack</option>
+                        <option value="ML Engineer">AI / ML</option>
+                        <option value="UI/UX Designer">UI/UX Design</option>
                       </select>
                     </div>
                     <div className="space-y-1">

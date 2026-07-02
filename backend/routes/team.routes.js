@@ -65,3 +65,4 @@ router.route("/:teamId/leave").post(
     verifyJWT,
     leaveTeam
 );
+export default router;

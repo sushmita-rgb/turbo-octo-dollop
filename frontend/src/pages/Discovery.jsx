@@ -23,13 +23,29 @@ const Discovery = () => {
 
   const fetchMatches = async () => {
     try {
-      const response = await fetch('/api/v1/users/discover');
+      // Smart matching engine - ranked by tech overlap, role
+      // complementarity, experience, location & availability.
+      // Was previously pointed at /api/v1/users/discover, whose response
+      // shape is { users, pagination } (an object) rather than a plain
+      // array, which is why the deck always rendered empty.
+      const response = await fetch('/api/v1/matching/users?limit=50');
       if (response.ok) {
         const data = await response.json();
-        setMatches(data.data);
+        const ranked = data?.data?.matches || [];
+        // Flatten { user, matchScore, matchBreakdown } -> user + matchScore
+        // so the rest of this component (which expects a flat user object)
+        // doesn't need to change at all.
+        const flattened = ranked.map(({ user: matchedUser, matchScore }) => ({
+          ...matchedUser,
+          matchScore,
+        }));
+        setMatches(flattened);
+      } else {
+        setMatches([]);
       }
     } catch (error) {
       console.error('Failed to fetch matches:', error);
+      setMatches([]);
     } finally {
       setLoading(false);
     }

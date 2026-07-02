@@ -42,6 +42,17 @@ const userSchema = new Schema({
         type: String,
         required: false
     },
+    // NEW: used by the matching engine to gauge seniority proximity
+    experienceLevel: {
+        type: String,
+        enum: ["Beginner", "Intermediate", "Advanced", "Expert"],
+        default: "Intermediate"
+    },
+    // NEW: used by the matching engine / discovery filters
+    availability: {
+        type: Boolean,
+        default: true
+    },
     location: {
         type: String,
         required: false

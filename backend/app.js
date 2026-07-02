@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import userRouter from './routes/user.routes.js'
+import teamRouter from './routes/team.routes.js'
+import inviteRouter from './routes/invite.routes.js'
+import matchingRouter from './routes/matching.routes.js'
 
 const app = express();
 
@@ -29,6 +32,9 @@ app.use(cookieParser());
 
 // routes declaration
 app.use("/api/v1/users", userRouter)
+app.use("/api/v1/teams", teamRouter)
+app.use("/api/v1/invites", inviteRouter)
+app.use("/api/v1/matching", matchingRouter)
 
 // error handler
 app.use((err, req, res, next) => {

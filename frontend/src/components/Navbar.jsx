@@ -10,6 +10,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = ['Explore', 'Teams', 'Hackathons'];
 
+  // 'Teams' now has a real destination; the rest stay as placeholder
+  // anchors until those pages exist too.
+  const navItemLink = (item) => {
+    if (item === 'Teams') return '/teams';
+    return null;
+  };
+
   return (
     <nav className="fixed w-full z-50 top-6 transition-all duration-300 pointer-events-none px-6 sm:px-10">
       <div className="max-w-[1400px] mx-auto">
@@ -28,18 +35,34 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:block">
             <div className="flex items-center space-x-6">
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-gray-400 hover:text-primary text-xs uppercase tracking-widest font-mono transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const to = navItemLink(item);
+                return to ? (
+                  <Link
+                    key={item}
+                    to={to}
+                    className="text-gray-400 hover:text-primary text-xs uppercase tracking-widest font-mono transition-colors"
+                  >
+                    {item}
+                  </Link>
+                ) : (
+                  <a
+                    key={item}
+                    href="#"
+                    className="text-gray-400 hover:text-primary text-xs uppercase tracking-widest font-mono transition-colors"
+                  >
+                    {item}
+                  </a>
+                );
+              })}
               {user && (
                 <Link to="/dashboard" className="text-gray-400 hover:text-primary text-xs uppercase tracking-widest font-mono transition-colors">
                   Match
+                </Link>
+              )}
+              {user && (
+                <Link to="/invites" className="text-gray-400 hover:text-primary text-xs uppercase tracking-widest font-mono transition-colors">
+                  Invites
                 </Link>
               )}
             </div>
