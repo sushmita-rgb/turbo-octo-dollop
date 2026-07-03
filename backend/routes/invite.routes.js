@@ -25,3 +25,4 @@ router.route("/all").get(
     verifyJWT,
     getAllInvites
 );
+export default router;

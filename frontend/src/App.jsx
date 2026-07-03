@@ -5,6 +5,10 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Discovery from './pages/Discovery';
 import Profile from './pages/Profile';
+import TeamsPage from './pages/TeamsPage';
+import CreateTeamPage from './pages/CreateTeamPage';
+import TeamDetailPage from './pages/TeamDetailPage';
+import InvitesPage from './pages/InvitesPage';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -32,6 +36,38 @@ function App() {
                   <Profile />
                 </ProtectedRoute>
               } 
+            />
+            <Route
+              path="/teams"
+              element={
+                <ProtectedRoute>
+                  <TeamsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/teams/create"
+              element={
+                <ProtectedRoute>
+                  <CreateTeamPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/teams/:teamId"
+              element={
+                <ProtectedRoute>
+                  <TeamDetailPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/invites"
+              element={
+                <ProtectedRoute>
+                  <InvitesPage />
+                </ProtectedRoute>
+              }
             />
           </Routes>
         </BrowserRouter>

@@ -229,9 +229,11 @@ const getPotentialMatches = asyncHandler(async (req, res) => {
     }
 
     // Role filter
+    // NOTE: was filter.teamRole (field doesn't exist on schema) -
+    // the actual field on the User model is `team_role`.
     if (role) {
 
-        filter.teamRole = {
+        filter.team_role = {
             $regex: role,
             $options: "i"
         };
