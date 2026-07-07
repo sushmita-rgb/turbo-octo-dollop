@@ -9,6 +9,9 @@ import TeamsPage from './pages/TeamsPage';
 import CreateTeamPage from './pages/CreateTeamPage';
 import TeamDetailPage from './pages/TeamDetailPage';
 import InvitesPage from './pages/InvitesPage';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import Contact from './pages/Contact';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -21,6 +24,9 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/contact" element={<Contact />} />
             <Route 
               path="/dashboard" 
               element={

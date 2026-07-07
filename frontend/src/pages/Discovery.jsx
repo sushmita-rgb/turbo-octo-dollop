@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
-import { Code2, X, Heart, MapPin, Terminal, LogOut, User } from 'lucide-react';
+import { Code2, X, ThumbsUp, MapPin, Terminal, LogOut, User } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 
 const TECH_COLORS = {
@@ -205,7 +205,7 @@ const Discovery = () => {
               onClick={() => handleAction('right')}
               className="w-16 h-16 rounded-full border border-primary flex items-center justify-center text-primary hover:bg-primary/10 transition-colors shadow-[0_0_15px_rgba(0,255,255,0.2)]"
             >
-              <Heart className="w-7 h-7" />
+              <ThumbsUp className="w-7 h-7" />
             </motion.button>
           </div>
         )}

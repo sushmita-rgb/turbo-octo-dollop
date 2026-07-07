@@ -1,0 +1,31 @@
+{
+  "allowed_root_directories": [
+    ".git",
+    ".github",
+    ".idea",
+    ".agents",
+    "backend",
+    "frontend"
+  ],
+  "allowed_backend_directories": [
+    "constants",
+    "controllers",
+    "db",
+    "middlewares",
+    "models",
+    "routes",
+    "seeds",
+    "services",
+    "utils",
+    "public",
+    "node_modules",
+    "modules"
+  ],
+  "allowed_frontend_src_directories": [
+    "assets",
+    "components",
+    "context",
+    "pages",
+    "modules"
+  ]
+}

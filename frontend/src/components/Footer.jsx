@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { GitBranch, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
@@ -29,9 +30,9 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-3 text-center md:text-left">
               <h4 className="text-white font-semibold text-sm mb-2">Legal</h4>
-              <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">Privacy</a>
-              <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">Terms</a>
-              <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">Contact</a>
+              <Link to="/privacy" className="text-gray-400 hover:text-primary text-sm transition-colors">Privacy</Link>
+              <Link to="/terms" className="text-gray-400 hover:text-primary text-sm transition-colors">Terms</Link>
+              <Link to="/contact" className="text-gray-400 hover:text-primary text-sm transition-colors">Contact</Link>
             </div>
           </div>
 

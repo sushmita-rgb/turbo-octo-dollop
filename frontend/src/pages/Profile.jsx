@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'; 
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Edit3, 
@@ -242,9 +243,13 @@ const Profile = () => {
 
               <button 
                 onClick={() => setIsEditModalOpen(true)}
-                className="w-full py-5 bg-[#4F46E5] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-[#5D55F0] hover:shadow-[0_0_30px_rgba(79,70,229,0.4)] transition-all flex items-center justify-center gap-3"
+                className="w-full py-5 relative overflow-hidden group bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white rounded-2xl text-[11px] font-mono font-bold uppercase tracking-[0.2em] hover:shadow-[0_0_35px_rgba(124,58,237,0.5)] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 border border-indigo-400/30"
               >
-                Request_Synchronization_ <Plus size={14} />
+                <span className="relative z-10 flex items-center gap-2">
+                  Request_Synchronization_ 
+                  <Plus size={14} className="transition-transform duration-500 group-hover:rotate-90" />
+                </span>
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 ease-out" />
               </button>
             </motion.div>
 
@@ -388,7 +393,10 @@ const Profile = () => {
           </div>
           <div className="space-y-4">
             <h5 className="text-white">Legal_</h5>
-            <div className="flex flex-col gap-2 opacity-50"><a href="#" className="hover:opacity-100 transition-opacity">Privacy</a><a href="#" className="hover:opacity-100 transition-opacity">Terms</a></div>
+            <div className="flex flex-col gap-2 opacity-50">
+              <Link to="/privacy" className="hover:opacity-100 transition-opacity">Privacy</Link>
+              <Link to="/terms" className="hover:opacity-100 transition-opacity">Terms</Link>
+            </div>
           </div>
         </div>
 
