@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { verifyJWT } from "../../middlewares/auth.middleware.js";
 import {
     getMatchedUsers,
     getMatchedTeams,
     getMatchedCandidatesForTeam,
-} from "../controllers/matching.controller.js";
+} from "./matching.controller.js";
 
 const router = Router();
 

@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Discovery from './pages/Discovery';
-import Profile from './pages/Profile';
-import TeamsPage from './pages/TeamsPage';
-import CreateTeamPage from './pages/CreateTeamPage';
-import TeamDetailPage from './pages/TeamDetailPage';
-import InvitesPage from './pages/InvitesPage';
+import Login from './modules/auth/pages/Login';
+import Signup from './modules/auth/pages/Signup';
+import Discovery from './modules/matching/pages/Discovery';
+import Profile from './modules/auth/pages/Profile';
+import TeamsPage from './modules/team/pages/TeamsPage';
+import CreateTeamPage from './modules/team/pages/CreateTeamPage';
+import TeamDetailPage from './modules/team/pages/TeamDetailPage';
+import InvitesPage from './modules/invite/pages/InvitesPage';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
-import { AuthProvider } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
+import { AuthProvider } from './modules/auth/context/AuthContext';
+import ProtectedRoute from './modules/auth/components/ProtectedRoute';
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Check, X, Mail, Users } from 'lucide-react';
-import Navbar from '../components/Navbar';
+import Navbar from '../../../components/Navbar';
 
 const InvitesPage = () => {
   const [invites, setInvites] = useState([]);

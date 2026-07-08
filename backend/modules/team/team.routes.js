@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { createTeam, joinTeam , leaveTeam, updateTeam , deleteTeam, discoverTeams, getTeamById} from "../controllers/team.controller.js";
-import { upload } from "../middlewares/multer.middleware.js"
-import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { createTeam, joinTeam , leaveTeam, updateTeam , deleteTeam, discoverTeams, getTeamById} from "./team.controller.js";
+import { upload } from "../../middlewares/multer.middleware.js"
+import { verifyJWT } from "../../middlewares/auth.middleware.js";
 
 const router = Router()
 

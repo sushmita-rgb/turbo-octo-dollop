@@ -29,7 +29,7 @@ import {
   Cpu,
   Atom
 } from 'lucide-react';
-import Navbar from '../components/Navbar';
+import Navbar from '../../../components/Navbar';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 

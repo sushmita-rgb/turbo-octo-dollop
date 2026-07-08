@@ -1,8 +1,8 @@
-import {asyncHandler} from "../utils/asyncHandler.js";
-import {ApiResponse} from "../utils/ApiResponse.js";
-import {Invite} from "../models/invite.model.js";
-import {Team} from "../models/team.model.js";
-import {ApiError} from "../utils/ApiError.js";
+import {asyncHandler} from "../../utils/asyncHandler.js";
+import {ApiResponse} from "../../utils/ApiResponse.js";
+import {Invite} from "./invite.model.js";
+import {Team} from "../team/team.model.js";
+import {ApiError} from "../../utils/ApiError.js";
 
 
 const sendInvite = asyncHandler(async (req, res) => {

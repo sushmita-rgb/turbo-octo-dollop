@@ -1,8 +1,8 @@
 import {Router} from "express";
-import {verifyJWT} from "../middlewares/auth.middleware.js";
+import {verifyJWT} from "../../middlewares/auth.middleware.js";
 import {
     sendInvite,acceptInvite,rejectInvite,getAllInvites
-} from "../controllers/invite.controller.js";
+} from "./invite.controller.js";
 
 const router = Router();
 

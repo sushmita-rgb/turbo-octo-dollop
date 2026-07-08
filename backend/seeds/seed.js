@@ -24,9 +24,9 @@ import bcrypt from "bcrypt";
 import { fakerEN_IN as faker } from "@faker-js/faker";
 
 import connectDB from "../db/index.js";
-import { User } from "../models/user.model.js";
-import { Team } from "../models/team.model.js";
-import { Invite } from "../models/invite.model.js";
+import { User } from "../modules/auth/user.model.js";
+import { Team } from "../modules/team/team.model.js";
+import { Invite } from "../modules/invite/invite.model.js";
 
 import {
     TECH_STACK,

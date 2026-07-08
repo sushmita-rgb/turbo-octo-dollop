@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate, Link } from 'react-router-dom';
 import { Code2, ArrowRight, Upload, X, Plus } from 'lucide-react';
-import Navbar from '../components/Navbar';
+import Navbar from '../../../components/Navbar';
 
 const CreateTeamPage = () => {
   const navigate = useNavigate();

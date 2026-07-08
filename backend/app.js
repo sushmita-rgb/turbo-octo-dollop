@@ -1,10 +1,10 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import userRouter from './routes/user.routes.js'
-import teamRouter from './routes/team.routes.js'
-import inviteRouter from './routes/invite.routes.js'
-import matchingRouter from './routes/matching.routes.js'
+import userRouter from './modules/auth/user.routes.js'
+import teamRouter from './modules/team/team.routes.js'
+import inviteRouter from './modules/invite/invite.routes.js'
+import matchingRouter from './modules/matching/matching.routes.js'
 
 const app = express();
 

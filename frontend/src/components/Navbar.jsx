@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../modules/auth/context/AuthContext';
 
 const Navbar = () => {
   const { user } = useAuth();

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Users, Calendar, MapPin, Zap, Send, LogOut, Trash2, Crown, Code2 } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import { useAuth } from '../context/AuthContext';
+import Navbar from '../../../components/Navbar';
+import { useAuth } from '../../auth/context/AuthContext';
 
 const TeamDetailPage = () => {
   const { teamId } = useParams();

@@ -1,13 +1,13 @@
-import { asyncHandler } from "../utils/asyncHandler.js";
-import { ApiResponse } from "../utils/ApiResponse.js";
-import { ApiError } from "../utils/ApiError.js";
-import { User } from "../models/user.model.js";
-import { Team } from "../models/team.model.js";
+import { asyncHandler } from "../../utils/asyncHandler.js";
+import { ApiResponse } from "../../utils/ApiResponse.js";
+import { ApiError } from "../../utils/ApiError.js";
+import { User } from "../auth/user.model.js";
+import { Team } from "../team/team.model.js";
 import {
     rankUsersForUser,
     rankTeamsForUser,
     rankUsersForTeam,
-} from "../services/matching.service.js";
+} from "../../services/matching.service.js";
 
 const PUBLIC_USER_FIELDS =
     "username fullName avatar coverImage bio location techStack experience preferences team_role experienceLevel availability socialLinks";
