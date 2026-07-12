@@ -7,8 +7,8 @@ All seeded users share the same password.
 
 ## Seeded Users
 
-1. **Email**: `akshat_panicker@example.com` | **Username**: `akshat_panicker`
-2. **Email**: `bodhan_tandon63@example.com` | **Username**: `bodhan_tandon`
-3. **Email**: `brajesh_singh@example.com` | **Username**: `brajesh_singh61`
-4. **Email**: `gopi_marar82@example.com` | **Username**: `gopi_marar69`
-5. **Email**: `siddarth_panicker52@example.com` | **Username**: `siddarth_panicker55`
+1. **Email**: `indira.agarwal@example.com` | **Username**: `indira.agarwal`
+2. **Email**: `bhaswar.singh@example.com` | **Username**: `bhaswar_singh`
+3. **Email**: `vidur.mehra19@example.com` | **Username**: `vidur_mehra80`
+4. **Email**: `vishwamitra.kocchar@example.com` | **Username**: `vishwamitra_kocchar`
+5. **Email**: `niranjan_mahajan98@example.com` | **Username**: `niranjan_mahajan`
