@@ -149,6 +149,15 @@ function buildUsers(count, hashedPassword) {
             experienceLevel: rand(EXPERIENCE_LEVELS),
             availability: Math.random() < 0.85, // ~85% mark themselves available
             location: rand(CITIES),
+            country: Math.random() < 0.75 ? "India" : rand(["United States", "United Kingdom", "Canada", "Germany", "Singapore"]),
+            college: rand([
+                "IIT Bombay", "BITS Pilani", "IIT Delhi", "IIT Madras", "Stanford University",
+                "MIT", "Delhi University", "NSUT", "DTU", "University of Toronto",
+                "Harvard University", "Cambridge University", "National University of Singapore"
+            ]),
+            reputationScore: randInt(50, 4800),
+            monthlyActivity: randInt(10, 1500),
+            hackathonWins: randInt(0, 9),
             techStack,
             experience,
             preferences,

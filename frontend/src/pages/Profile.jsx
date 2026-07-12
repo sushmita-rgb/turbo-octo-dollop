@@ -42,6 +42,8 @@ const Profile = () => {
   const [formData, setFormData] = useState({
     fullName: user?.fullName || '',
     location: user?.location || '',
+    country: user?.country || '',
+    college: user?.college || '',
     bio: user?.bio || '',
     team_role: user?.team_role || '',
     socialLinks: {
@@ -56,6 +58,8 @@ const Profile = () => {
       setFormData({
         fullName: user.fullName || '',
         location: user.location || '',
+        country: user.country || '',
+        college: user.college || '',
         bio: user.bio || '',
         team_role: user.team_role || '',
         socialLinks: {
@@ -114,9 +118,9 @@ const Profile = () => {
     tagline: user?.bio || "",
     avatar: user?.avatar || null,
     stats: {
-      hackathons: "",
-      wins: "",
-      rating: "",
+      hackathons: user?.monthlyActivity || "0",
+      wins: user?.hackathonWins || "0",
+      rating: user?.reputationScore || "0",
       matchRate: ""
     },
     socials: [
@@ -183,9 +187,9 @@ const Profile = () => {
           
           <div className="flex items-center gap-16 pr-8">
             {[
-              { label: 'Hackathons', val: profileData.stats.hackathons, icon: <Trophy size={14} /> },
+              { label: 'Activity', val: profileData.stats.hackathons, icon: <Trophy size={14} /> },
               { label: 'Wins', val: profileData.stats.wins, icon: <Award size={14} /> },
-              { label: 'Team Rating', val: profileData.stats.rating, icon: <Heart size={14} /> }
+              { label: 'Reputation', val: profileData.stats.rating, icon: <Heart size={14} /> }
             ].map(stat => (
               <div key={stat.label} className="text-center group">
                 <div className="flex items-center gap-2 justify-center text-slate-500 mb-1 group-hover:text-[#97ce23] transition-colors">
@@ -217,6 +221,18 @@ const Profile = () => {
                     <div className="p-2 bg-slate-800 rounded-lg"><MapPin size={14} className="text-[#97ce23]" /></div>
                     <span>{user?.location || ""}</span>
                   </div>
+                  {user?.country && (
+                    <div className="flex items-center gap-4 text-sm text-slate-400 hover:text-white transition-colors cursor-default">
+                      <div className="p-2 bg-slate-800 rounded-lg"><Globe size={14} className="text-[#97ce23]" /></div>
+                      <span>{user.country}</span>
+                    </div>
+                  )}
+                  {user?.college && (
+                    <div className="flex items-center gap-4 text-sm text-slate-400 hover:text-white transition-colors cursor-default">
+                      <div className="p-2 bg-slate-800 rounded-lg"><Briefcase size={14} className="text-[#a855f7]" /></div>
+                      <span>{user.college}</span>
+                    </div>
+                  )}
                   <div className="flex items-center gap-4 text-sm text-slate-400 hover:text-white transition-colors cursor-default">
                     <div className="p-2 bg-slate-800 rounded-lg"><Globe size={14} className="text-[#4F46E5]" /></div>
                     <span>{user?.username ? `${user.username}.dev` : ""}</span>
@@ -471,6 +487,17 @@ const Profile = () => {
                         <div className="space-y-2">
                           <label className="text-[10px] font-mono text-slate-500 uppercase">Location</label>
                           <input type="text" value={formData.location} onChange={(e) => setFormData({...formData, location: e.target.value})} className="w-full bg-black border border-slate-800 rounded-xl px-4 py-3 text-sm focus:border-[#97ce23] outline-none text-white" placeholder="Berlin, DE" />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-mono text-slate-500 uppercase">Country</label>
+                          <input type="text" value={formData.country} onChange={(e) => setFormData({...formData, country: e.target.value})} className="w-full bg-black border border-slate-800 rounded-xl px-4 py-3 text-sm focus:border-[#97ce23] outline-none text-white" placeholder="India" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-mono text-slate-500 uppercase">College</label>
+                          <input type="text" value={formData.college} onChange={(e) => setFormData({...formData, college: e.target.value})} className="w-full bg-black border border-slate-800 rounded-xl px-4 py-3 text-sm focus:border-[#97ce23] outline-none text-white" placeholder="IIT Bombay" />
                         </div>
                       </div>
 

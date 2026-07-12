@@ -9,6 +9,7 @@ import TeamsPage from './pages/TeamsPage';
 import CreateTeamPage from './pages/CreateTeamPage';
 import TeamDetailPage from './pages/TeamDetailPage';
 import InvitesPage from './pages/InvitesPage';
+import Leaderboard from './pages/Leaderboard';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
@@ -72,6 +73,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <InvitesPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/leaderboard"
+              element={
+                <ProtectedRoute>
+                  <Leaderboard />
                 </ProtectedRoute>
               }
             />

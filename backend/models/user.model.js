@@ -57,6 +57,28 @@ const userSchema = new Schema({
         type: String,
         required: false
     },
+    country: {
+        type: String,
+        default: "India",
+        required: false
+    },
+    college: {
+        type: String,
+        default: "",
+        required: false
+    },
+    reputationScore: {
+        type: Number,
+        default: 0
+    },
+    monthlyActivity: {
+        type: Number,
+        default: 0
+    },
+    hackathonWins: {
+        type: Number,
+        default: 0
+    },
     techStack: [
         {
             type: String

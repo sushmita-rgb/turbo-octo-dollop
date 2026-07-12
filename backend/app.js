@@ -5,6 +5,7 @@ import userRouter from './routes/user.routes.js'
 import teamRouter from './routes/team.routes.js'
 import inviteRouter from './routes/invite.routes.js'
 import matchingRouter from './routes/matching.routes.js'
+import leaderboardRouter from './routes/leaderboard.routes.js'
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use("/api/v1/users", userRouter)
 app.use("/api/v1/teams", teamRouter)
 app.use("/api/v1/invites", inviteRouter)
 app.use("/api/v1/matching", matchingRouter)
+app.use("/api/v1/leaderboard", leaderboardRouter)
 
 // error handler
 app.use((err, req, res, next) => {

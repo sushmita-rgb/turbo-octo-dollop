@@ -8,12 +8,13 @@ import { useAuth } from '../context/AuthContext';
 const Navbar = () => {
   const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
-  const navItems = ['Explore', 'Teams', 'Hackathons'];
+  const navItems = ['Explore', 'Teams', 'Leaderboard', 'Hackathons'];
 
   // 'Teams' now has a real destination; the rest stay as placeholder
   // anchors until those pages exist too.
   const navItemLink = (item) => {
     if (item === 'Teams') return '/teams';
+    if (item === 'Leaderboard') return '/leaderboard';
     return null;
   };
 
